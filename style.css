@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative; 
+}
+
+header {
+    background-color: #e68c5b;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+footer {
+    background-color: #cf7247;
+    padding: 20px;
+    text-align: center;
+}
+
+header, nav {
+    border-bottom: 4px solid #f5dd57; /* Onderste grens voor header en nav */
+} 
+
+nav {
+    text-align: left;
+    padding: 10px;
+    margin: 0;
+    background-color: #cf7247;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+.left-section {
+    width: 15%;
+    background-color: #e6bf8d;
+    padding: 20px;
+}
+
+.right-section {
+    width: 85%;
+    background-color: #fdfdfd;
+    padding: 20px;
+}
+
+.right-section h2 {
+    color: #cf7247;
+}
+
+/* Flexbox voor desktops */
+@media only screen and (min-width: 601px) {
+    main {
+        display: flex;
+    }
+
+    .left-section {
+        flex: 0 0 15%; /* 30% breedte voor de linkersectie */
+    }
+
+    .right-section {
+        flex: 1; /* De resterende breedte voor de rechtersectie */
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .left-section, .right-section {
+        width: 100%;
+        box-sizing: border-box; /* Voeg dit toe om padding en borders binnen de breedte te houden */
+    }
+
+    header {
+        width: 100%; /* Zorg ervoor dat de header de volledige breedte van het scherm inneemt */
+        padding: 20px 0; /* Aangepaste padding om ruimte aan de boven- en onderkant te verminderen */
+        box-sizing: border-box; /* Voeg dit toe om padding binnen de breedte te houden */
+    }
+
+    nav {
+        position: static;
+        margin: 0;
+        padding: 10px;
+        background-color: #cf7247; /* Aangepaste achtergrondkleur */
+        width: 100%; /* Zorg ervoor dat de navigatiebalk de volledige breedte van het scherm inneemt */
+    }
+
+    nav ul {
+        text-align: center;
+        padding: 0; /* Voeg padding toe om ruimte rondom de lijstitems te verminderen */
+    }
+
+    nav ul li {
+        display: inline-block;
+        margin: 0 5px; /* Aangepaste marge om ruimte tussen de items toe te voegen */
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 5px 10px;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .left-section,
+    .right-section {
+        width: 100%;
+        padding: 10px; /* Voeg padding toe om ruimte rondom de inhoud van de secties toe te voegen */
+        box-sizing: border-box; /* Zorg ervoor dat padding binnen de breedte van de sectie wordt gehouden */
+    }
+}
